@@ -73,4 +73,4 @@ In this project, textIO is used in the VehicleRentalSystem class to save fleet d
 Comparable will be implemented in the Vehicle class and Comparator will be used in the VehicleRentalSystem class
 
 
-For deliverable 2 (50%), I will implement the skeleton for all classes, meaning the attributes, the setters and getters, equals method, toString and constructors as well as the comparable interface and the basic methods/actions for the users and vehicles. 
+For deliverable 2 (50%), I will implement the skeleton for User and Vehicle classes and subclasses, meaning the attributes, the setters and getters, equals method, toString and constructors as well as the comparable interface and the basic methods/actions for the users and vehicles. 
