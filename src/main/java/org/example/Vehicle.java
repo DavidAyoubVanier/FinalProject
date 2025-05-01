@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Objects;
 
-public abstract class Vehicle implements Rentable {
+public abstract class Vehicle implements Rentable, Comparable<Vehicle> {
     private String plateNumber;
     private String model;
     private double rate;
@@ -13,6 +13,26 @@ public abstract class Vehicle implements Rentable {
         this.model = model;
         this.rate = rate;
         this.available = available;
+    }
+
+    @Override
+    public boolean rent() {
+        if (available) {
+            available = false;
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean returnVehicle() {
+        available = true;
+        return true;
+    }
+
+    @Override
+    public int compareTo(Vehicle other) {
+        return Double.compare(this.rate, other.rate);
     }
 
     public String getPlateNumber() {
