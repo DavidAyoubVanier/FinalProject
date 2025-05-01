@@ -8,11 +8,11 @@ public abstract class Vehicle implements Rentable, Comparable<Vehicle> {
     private double rate;
     private boolean available;
 
-    public Vehicle(String plateNumber, String model, double rate, boolean available) {
+    public Vehicle(String plateNumber, String model, double rate) {
         this.plateNumber = plateNumber;
         this.model = model;
         this.rate = rate;
-        this.available = available;
+        this.available = true;
     }
 
     @Override
@@ -81,11 +81,7 @@ public abstract class Vehicle implements Rentable, Comparable<Vehicle> {
 
     @Override
     public String toString() {
-        return "Vehicle{" +
-                "plateNumber='" + plateNumber + '\'' +
-                ", model='" + model + '\'' +
-                ", rate=" + rate +
-                ", available=" + available +
-                '}';
+        return model + " [" + plateNumber + "] - $" + rate + " per day (" +
+                (available ? "Available" : "Rented") + ")";
     }
 }
