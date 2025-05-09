@@ -12,6 +12,6 @@ public class Employee extends User {
     }
 
     public void viewRentalLogs(List<RentalLog> logs) {
-        //TODO requires rentalLog class, allows an employee to see all past rental information
+        logs.forEach(System.out::println);
     }
 }
