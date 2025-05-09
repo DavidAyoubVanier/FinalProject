@@ -1,19 +1,42 @@
 package org.example;
 
+import java.time.LocalDate;
+
 public class RentalLog {
-    // attributes
+    private Vehicle vehicle;
+    private Customer customer;
+    private LocalDate rentDate;
+    private LocalDate returnDate;
 
+    public RentalLog(Vehicle vehicle, Customer customer, LocalDate rentDate, LocalDate returnDate) {
+        this.vehicle = vehicle;
+        this.customer = customer;
+        this.rentDate = rentDate;
+        this.returnDate = returnDate;
+    }
 
-    // constructor
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
 
+    public Customer getCustomer() {
+        return customer;
+    }
 
-    // toString
+    public LocalDate getRentDate() {
+        return rentDate;
+    }
 
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
 
-    // setters, getters
-
+    @Override
+    public String toString() {
+        return customer + " rented " + vehicle + " from " + rentDate + " to " + returnDate;
+    }
 
     public long getDuration() {
-        // TODO gives the time left for the rental, requires implementation of attributes
+        return rentDate.until(returnDate).getDays();
     }
 }
