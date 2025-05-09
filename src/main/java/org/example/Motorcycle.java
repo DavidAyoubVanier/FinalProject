@@ -18,8 +18,6 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public String toString() {
-        return "Motorcycle{" +
-                "engineCapacity=" + engineCapacity +
-                '}' + super.toString();
+        return super.toString() + " [Engine Capacity: " + engineCapacity + "cc]";
     }
 }

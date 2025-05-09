@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Customer extends User {
     public Customer(String id, String name) {
@@ -8,9 +9,15 @@ public class Customer extends User {
     }
 
     @Override
-    public void viewAvailableVehicles(List<Vehicle> fleet) {
-        fleet.stream()
+    public String viewAvailableVehicles(List<Vehicle> fleet) {
+        return fleet.stream()
                 .filter(Vehicle::isAvailable)
-                .forEach(System.out::println);
+                .map(Vehicle::toString)
+                .collect(Collectors.joining(", "));
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

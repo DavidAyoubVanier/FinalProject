@@ -18,8 +18,6 @@ public class Car extends Vehicle {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "trunkSize=" + trunkSize +
-                '}' + super.toString();
+        return super.toString() + " [Trunk: " + trunkSize + " cu ft]";
     }
 }

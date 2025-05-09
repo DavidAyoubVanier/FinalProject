@@ -12,7 +12,7 @@ public abstract class User {
         this.name = name;
     }
 
-    public abstract void viewAvailableVehicles(List<Vehicle> fleet);
+    public abstract String viewAvailableVehicles(List<Vehicle> fleet);
 
     @Override
     public boolean equals(Object o) {
@@ -28,10 +28,7 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                '}';
+        return name + " (ID: " + id + ")";
     }
 
     // Setters and getters
