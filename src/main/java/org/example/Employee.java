@@ -9,9 +9,14 @@ public class Employee extends User {
     }
     @Override
     public String viewAvailableVehicles(List<Vehicle> fleet) {
-        return fleet.stream()
+        if (fleet == null || fleet.isEmpty()) {
+            return "Fleet is empty.";
+        }
+        String result = fleet.stream()
                 .map(Vehicle::toString)
                 .collect(Collectors.joining(", "));
+
+        return result.isEmpty() ? "Fleet is empty." : result;
     }
 
     public void viewRentalLogs(List<RentalLog> logs) {
