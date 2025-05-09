@@ -25,7 +25,7 @@ public class CustomerTest {
     }
 
     @Test
-    public void testViewAvailableVehicles_withSomeAvailableVehicles() {
+    public void testViewAvailableVehiclesWithAvailableAndRented() {
         List<Vehicle> fleet = new ArrayList<>();
         fleet.add(new Car("A001", "Toyota Corolla", 100.0, 15));
         fleet.add(new Motorcycle("B002", "Yamaha YZF-R1", 75.0, 950));
