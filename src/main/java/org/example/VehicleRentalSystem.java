@@ -90,5 +90,11 @@ public class VehicleRentalSystem {
         }
     }
 
-    // getters
+    public List<Vehicle> getFleet() {
+        return fleet;
+    }
+
+    public List<RentalLog> getLogs() {
+        return logs;
+    }
 }
