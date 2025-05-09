@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserTest {
+public class CustomerTest {
 
     @Test
     public void testViewAvailableVehiclesForCustomer() {
