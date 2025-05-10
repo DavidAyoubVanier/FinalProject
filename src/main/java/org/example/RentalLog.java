@@ -37,6 +37,7 @@ public class RentalLog {
         return customer + " rented " + vehicle + " from " + rentDate + " to " + returnDate;
     }
 
+    // Shows the rental time
     public long getDuration() {
         return ChronoUnit.DAYS.between(rentDate, returnDate);
     }

@@ -8,6 +8,7 @@ public class Customer extends User {
         super(id, name);
     }
 
+    // Shows the customer all vehicles they could rent
     @Override
     public String viewAvailableVehicles(List<Vehicle> fleet) {
         if (fleet == null || fleet.isEmpty()) {

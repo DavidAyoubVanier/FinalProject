@@ -7,6 +7,8 @@ public class Employee extends User {
     public Employee(String id, String name) {
         super(id, name);
     }
+
+    // Shows employees everything in the fleet
     @Override
     public String viewAvailableVehicles(List<Vehicle> fleet) {
         if (fleet == null || fleet.isEmpty()) {
@@ -19,6 +21,7 @@ public class Employee extends User {
         return result.isEmpty() ? "Fleet is empty." : result;
     }
 
+    // Shows employees all the rents and returns
     public void viewRentalLogs(List<RentalLog> logs) {
         logs.forEach(System.out::println);
     }

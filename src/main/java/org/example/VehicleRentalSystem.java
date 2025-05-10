@@ -13,10 +13,12 @@ public class VehicleRentalSystem {
     private List<RentalLog> logs = new ArrayList<>();
 
 
+    // Adds a vehicle to the fleet
     public void addVehicle(Vehicle v) {
         fleet.add(v);
     }
 
+    // Rents a vehicle afer checking its plate number and availability
     public String rentVehicle(Customer c, String plate, LocalDate rentDate, LocalDate returnDate) {
         for (Vehicle v : fleet) {
             if (v.getPlateNumber().equals(plate) && v.isAvailable()) {
@@ -29,6 +31,7 @@ public class VehicleRentalSystem {
         return "Vehicle not available.";
     }
 
+    // Returns a vehicle after checking its plate number and availability
     public String returnVehicle(String plate) {
         for (Vehicle v : fleet) {
             if (v.getPlateNumber().equals(plate) && !v.isAvailable()) {
@@ -39,6 +42,7 @@ public class VehicleRentalSystem {
         return "Vehicle not found or already available.";
     }
 
+    // Writes vehicle information to an external file
     public void saveFleetToFile(String filename) {
         try (FileWriter fileWriter = new FileWriter(filename)) {
             for (Vehicle v : fleet) {
@@ -63,6 +67,7 @@ public class VehicleRentalSystem {
         }
     }
 
+    // Receives vehicle information from an external file
     public void loadFleetFromFile(String filename) {
         try (Scanner scanner = new Scanner(new File(filename))) {
             while (scanner.hasNextLine()) {

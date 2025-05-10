@@ -15,6 +15,7 @@ public abstract class Vehicle implements Rentable, Comparable<Vehicle> {
         this.available = true;
     }
 
+    // Rents a vehicle
     @Override
     public boolean rent() {
         if (available) {
@@ -24,6 +25,7 @@ public abstract class Vehicle implements Rentable, Comparable<Vehicle> {
         return false;
     }
 
+    // Returns a vehicle
     @Override
     public boolean returnVehicle() {
         available = true;
