@@ -17,28 +17,26 @@ public class VehicleRentalSystem {
         fleet.add(v);
     }
 
-    public void rentVehicle(Customer c, String plate, LocalDate rentDate, LocalDate returnDate) {
+    public String rentVehicle(Customer c, String plate, LocalDate rentDate, LocalDate returnDate) {
         for (Vehicle v : fleet) {
             if (v.getPlateNumber().equals(plate) && v.isAvailable()) {
                 if (v.rent()) {
                     logs.add(new RentalLog(v, c, rentDate, returnDate));
-                    System.out.println("Rented: " + v);
-                    return;
+                    return "Rented: " + v;
                 }
             }
         }
-        System.out.println("Vehicle not available.");
+        return "Vehicle not available.";
     }
 
-    public void returnVehicle(String plate) {
+    public String returnVehicle(String plate) {
         for (Vehicle v : fleet) {
             if (v.getPlateNumber().equals(plate) && !v.isAvailable()) {
                 v.returnVehicle();
-                System.out.println("Returned: " + v);
-                return;
+                return "Returned: " + v;
             }
         }
-        System.out.println("vehicle not found or already available.");
+        return "Vehicle not found or already available.";
     }
 
     public void saveFleetToFile(String filename) {
