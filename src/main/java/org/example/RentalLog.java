@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class RentalLog {
     private Vehicle vehicle;
@@ -37,6 +38,6 @@ public class RentalLog {
     }
 
     public long getDuration() {
-        return rentDate.until(returnDate).getDays();
+        return ChronoUnit.DAYS.between(rentDate, returnDate);
     }
 }
