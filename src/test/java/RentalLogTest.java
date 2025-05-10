@@ -65,6 +65,4 @@ public class RentalLogTest {
 
         Assertions.assertEquals(expected, result);
     }
-
-
 }

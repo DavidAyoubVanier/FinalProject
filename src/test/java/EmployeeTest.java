@@ -55,6 +55,4 @@ public class EmployeeTest {
         String result = employee.viewAvailableVehicles(null);
         Assertions.assertEquals(expected, result);
     }
-
-
 }

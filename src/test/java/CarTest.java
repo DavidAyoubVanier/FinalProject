@@ -49,6 +49,4 @@ public class CarTest {
         String expected = "Audi R8 [A004] - $150.0 per day (Rented) [Trunk: 4 cu ft]";
         Assertions.assertEquals(expected, car.toString());
     }
-
-
 }
